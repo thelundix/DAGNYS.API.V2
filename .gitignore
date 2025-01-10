@@ -9,7 +9,6 @@
 # User-specific files
 .vscode
 .DS_Store
-appsettings.*
 *.rsuser
 *.suo
 *.user
