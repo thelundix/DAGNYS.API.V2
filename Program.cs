@@ -22,6 +22,9 @@ builder
 
 builder.Services.AddScoped<IOrderService, OrderService>();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 using var scope = app.Services.CreateScope();
@@ -44,6 +47,10 @@ catch (Exception ex)
     Console.WriteLine("{0}", ex.Message);
     throw;
 }
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.MapControllers();
 
 app.Run();

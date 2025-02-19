@@ -23,7 +23,6 @@ public class ProductsController : ControllerBase
     {
         try
         {
-            // Manuell validering av obligatoriska fält
             if (
                 productViewModel == null
                 || string.IsNullOrWhiteSpace(productViewModel.Name)
