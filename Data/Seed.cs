@@ -58,4 +58,55 @@ public static class Seed
             await context.SaveChangesAsync();
         }
     }
+
+    public static async Task LoadCustomers(DataContext context)
+    {
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+        if (context.Customers.Any())
+            return;
+
+        var json = File.ReadAllText("Data/json/customers.json");
+        var customers = JsonSerializer.Deserialize<List<Customer>>(json, options);
+
+        if (customers is not null && customers.Count > 0)
+        {
+            await context.Customers.AddRangeAsync(customers);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    public static async Task LoadProducts(DataContext context)
+    {
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+        if (context.Products.Any())
+            return;
+
+        var json = File.ReadAllText("Data/json/products.json");
+        var products = JsonSerializer.Deserialize<List<Product>>(json, options);
+
+        if (products is not null && products.Count > 0)
+        {
+            await context.Products.AddRangeAsync(products);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    public static async Task LoadOrders(DataContext context)
+    {
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+        if (context.Orders.Any())
+            return;
+
+        var json = File.ReadAllText("Data/json/orders.json");
+        var orders = JsonSerializer.Deserialize<List<Order>>(json, options);
+
+        if (orders is not null && orders.Count > 0)
+        {
+            await context.Orders.AddRangeAsync(orders);
+            await context.SaveChangesAsync();
+        }
+    }
 }

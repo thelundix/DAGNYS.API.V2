@@ -1,4 +1,6 @@
+using dagnys.api.Converters;
 using dagnys.api.Data;
+using dagnys.api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,15 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 
 builder.Services.AddControllers();
+
+builder
+    .Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonDateConverter());
+    });
+
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();
 
@@ -23,6 +34,10 @@ try
     await Seed.LoadSuppliers(context);
     await Seed.LoadRawMaterials(context);
     await Seed.LoadSupplierRawMaterials(context);
+
+    await Seed.LoadCustomers(context);
+    await Seed.LoadProducts(context);
+    await Seed.LoadOrders(context);
 }
 catch (Exception ex)
 {
