@@ -11,8 +11,6 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DevConnection"));
 });
 
-builder.Services.AddControllers();
-
 builder
     .Services.AddControllers()
     .AddJsonOptions(options =>
