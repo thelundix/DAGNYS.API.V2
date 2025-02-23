@@ -18,7 +18,7 @@ dotnet ef database update
 ```
 
 ## Dummy data Json
-Det finns testdata som vi kan fylla databasen med. Data som finns just nu är customers, orders, products tillhörande Inlämningsuppgift Del 2 C# Fortsättning, samt testdata från Inlämningsuppgift Del 1 C# följande suppliers, rawmaterails, supplierrawmaterials.
+Det finns testdata som vi kan fylla databasen med. Data som finns just nu är customers, orders/orderItems, products tillhörande Inlämningsuppgift Del 2 C# Fortsättning, samt testdata från Inlämningsuppgift Del 1 C# följande suppliers, rawmaterails, supplierrawmaterials.
 
 ## Starta applikationen
 Starta applikationen med kommandot:
