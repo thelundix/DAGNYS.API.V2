@@ -27,5 +27,5 @@ Starta applikationen med kommandot:
 dotnet run
 ```
 
-Då körs seed-skriptet och databasen fylls med testdata.
+Seed-skriptet och databasen fylls med testdata.
 
