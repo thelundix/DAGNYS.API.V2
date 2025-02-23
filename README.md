@@ -1,5 +1,6 @@
 # Mormor Dagnys Bageri API
-Detta är startprojektet för hantering av beställningar, produkter och kunder för Mormor Dagnys Bageri.
+Inlämningsuppgift Del 2 C# Fortsättning där det byggs på i befintiligt API från Inlämningsuppgift del 1 , API med hantering av beställningar, produkter och
+kunder.
 Projektet är konfigurerat för att använda Sqlite som databas.
 
 ## Komma igång
